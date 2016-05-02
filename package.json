@@ -1,0 +1,36 @@
+{
+  "name": "projet2",
+  "version": "1.0.0",
+  "description": "Projet 2A LPDW 2015",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morpheus93/lpdw-projet2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morpheus93/lpdw-projet2/issues"
+  },
+  "homepage": "https://github.com/morpheus93/lpdw-projet2#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-image-optimization": "^0.1.3",
+    "gulp-jsonminify": "^1.0.0",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sync": "^0.1.4",
+    "gulp-uglify": "^1.5.3",
+    "htmlmin": "0.0.6"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

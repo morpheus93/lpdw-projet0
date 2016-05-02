@@ -26,7 +26,7 @@ gulp.task('scripts', function() {
     .pipe(plumber())
     .pipe(ngmin())
   	.pipe(uglify({mangle: false}))
-    .pipe(concat('tagifier.js'))
+    .pipe(concat('script.js'))
     .pipe(gulp.dest('./public/js/'));
 });
 

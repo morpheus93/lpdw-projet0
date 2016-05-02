@@ -18,5 +18,5 @@ We use [Gulp](http://gulpjs.com/) to compile our resources and [Node](https://no
 - Open a first terminal and type ```node app.js``` *(you can also use [Nodemon](http://nodemon.io/)).*
 - If this is the first launch, type ```gulp watch``` in your console (it will execute all task to be sure).
 - Open a second terminal and type ```gulp watch``` .
-- 
+
 You are ready to work with the **/src** folder !

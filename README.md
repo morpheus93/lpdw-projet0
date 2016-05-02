@@ -1,6 +1,12 @@
 #Projet2
 
-##Instalation
+##Prerequisite
+
+- [NodeJS](https://nodejs.org/en/)
+- [GIT](https://git-scm.com/downloads)
+- [Bower](http://bower.io/)
+
+##Installation
 
 - Clone or Fork the repo.
 - In your console type ```npm install```.
@@ -15,8 +21,6 @@
 ##Working with the project
 
 We use [Gulp](http://gulpjs.com/) to compile our resources and [Node](https://nodejs.org/en/) as webserver , so you should too :)
-- Open a first terminal and type ```node app.js``` *(you can also use [Nodemon](http://nodemon.io/)).*
-- If this is the first launch, type ```gulp watch``` in your console (it will execute all task to be sure).
-- Open a second terminal and type ```gulp watch``` .
+- Open a terminal and type ```gulp```
 
-You are ready to work with the **/src** folder !
+That's all You are ready to work with the **/src** folder ! (Keep the terminal open)

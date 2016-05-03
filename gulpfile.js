@@ -35,12 +35,12 @@ gulp.task('scripts', function() {
     .pipe(plumber())
     .pipe(ngmin())
   	.pipe(uglify({mangle: false}))
-    .pipe(concat('script.js'))
+    .pipe(concat('script.min.js'))
     .pipe(gulp.dest('./public/js/'));
 });
 
 gulp.task('images', function(cb) {
-    gulp.src(['src/**/*.png','src/**/*.jpg','src/**/*.gif','src/**/*.jpeg','src/**/*.svg']).pipe(imageop({
+    gulp.src(['src/**/*.png','src/**/*.jpg','src/**/*.gif','src/**/*.jpeg']).pipe(imageop({
         optimizationLevel: 5,
         progressive: true,
         interlaced: true

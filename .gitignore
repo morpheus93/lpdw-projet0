@@ -13,6 +13,9 @@ config.json
 exports
 temps
 
+### PHPSTORM ###
+.idea/*
+
 
 ### Node ###
 # Logs

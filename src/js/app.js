@@ -14,6 +14,48 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/",
       templateUrl: "views/index.html",
       reload:true
+    })
+    .state('signup', {
+      url: "/signup",
+      templateUrl: "views/signup.html",
+    })
+    .state('organization', {
+      url: "/organizations/:id",
+      templateUrl: "views/organizations.html",
+
+    })
+    .state('user', {
+      url: "/users/:id",
+      templateUrl: "views/users.html",
+
+    })
+    .state('editProfil', {
+      url: "/profile/edit",
+      templateUrl: "views/edit_profil.html",
+
+    })
+    .state('contact', {
+      url: "/contact",
+      templateUrl: "views/users.html",
+
+    })
+    .state('projects', {
+      url: "/projects",
+      templateUrl: "views/projects/list.html",
+    })
+    .state('projects.item', {
+      url: "/:id",
+      templateUrl: "views/projects/project.html",
+    })
+    .state('user', {
+      url: "/users/:id",
+      templateUrl: "views/users.html",
+
+    })
+    .state('search', {
+      url: "/search/:query",
+      templateUrl: "views/search.html",
+
     });
 });
 

@@ -84,5 +84,5 @@ gulp.task('default', gulpsync.sync([
         'locales'
     ],
     ['server'],
-    'watch'
+    ['watch']
 ]));

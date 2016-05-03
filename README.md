@@ -5,6 +5,7 @@
 - [NodeJS](https://nodejs.org/en/)
 - [GIT](https://git-scm.com/downloads)
 - [Bower](http://bower.io/)
+- [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) (Globally)
 
 ##Installation
 

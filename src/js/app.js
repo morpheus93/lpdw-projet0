@@ -47,10 +47,13 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/:id",
       templateUrl: "views/projects/project.html",
     })
-    .state('user', {
-      url: "/users/:id",
-      templateUrl: "views/users.html",
-
+    .state('announcements', {
+      url: "/announcements",
+      templateUrl: "views/announcements/list.html",
+    })
+    .state('announcements.item', {
+      url: "/:id",
+      templateUrl: "views/announcements/announcement.html",
     })
     .state('search', {
       url: "/search/:query",

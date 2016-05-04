@@ -1,4 +1,4 @@
-app.controller('organizationCtrl', function($scope,$state
+app.controller('organizationCtrl', function($scope,$state,$rootScope)
 {
 
 });

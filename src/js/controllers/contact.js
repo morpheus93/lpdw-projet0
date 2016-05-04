@@ -1,4 +1,4 @@
-app.controller('contactCtrl', function($scope,$state
+app.controller('contactCtrl', function($scope,$state,$rootScope)
 {
 
 });

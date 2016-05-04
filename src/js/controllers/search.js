@@ -1,4 +1,4 @@
-app.controller('searchCtrl', function($scope,$state
+app.controller('searchCtrl', function($scope,$state,$rootScope)
 {
-
+  
 });

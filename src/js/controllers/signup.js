@@ -1,4 +1,4 @@
-app.controller('signupCtrl', function($scope,$state
+app.controller('signupCtrl', function($scope,$state,$rootScope)
 {
 
 });

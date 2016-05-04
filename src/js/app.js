@@ -18,30 +18,32 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('signup', {
       url: "/signup",
       templateUrl: "views/signup.html",
+      controller : "signupCtrl"
     })
     .state('organization', {
       url: "/organizations/:id",
       templateUrl: "views/organizations.html",
-
+      controller : "organizationCtrl"
     })
     .state('user', {
       url: "/users/:id",
       templateUrl: "views/users.html",
-
+      controller : "userCtrl"
     })
     .state('editProfil', {
       url: "/profile/edit",
       templateUrl: "views/edit_profil.html",
-
+      controller : "userCtrl"
     })
     .state('contact', {
       url: "/contact",
       templateUrl: "views/users.html",
-
+      controller : "contactCtrl"
     })
     .state('projects', {
       url: "/projects",
       templateUrl: "views/projects/list.html",
+      controller : "projectCtrl"
     })
     .state('projects.item', {
       url: "/:id",
@@ -50,6 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('announcements', {
       url: "/announcements",
       templateUrl: "views/announcements/list.html",
+      controller : "announcementCtrl"
     })
     .state('announcements.item', {
       url: "/:id",
@@ -58,12 +61,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('search', {
       url: "/search/:query",
       templateUrl: "views/search.html",
-
+      controller : "searchCtrl"
     });
 });
 
 app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location', function($scope, $http,$rootScope,$location)
 {
+
+  $rootScope.apiIndex = "http://127.0.0.1/api/";
+
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // called when a state change
   });

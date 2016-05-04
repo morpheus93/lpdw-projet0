@@ -1,4 +1,4 @@
-app.controller('announcementCtrl', function($scope,$state
+app.controller('announcementCtrl', function($scope,$state,$rootScope)
 {
 
 });

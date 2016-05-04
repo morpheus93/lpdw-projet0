@@ -1,5 +1,7 @@
 #Projet2
 
+This is the **front-end** part of the project, [click here for the Api / backend](https://github.com/morpheus93/lpdw-projet2-api)
+
 ##Prerequisite
 
 - [NodeJS](https://nodejs.org/en/)

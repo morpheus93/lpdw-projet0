@@ -1,7 +1,7 @@
 {
   "name": "projet2",
   "version": "1.0.0",
-  "author":"Cyriaque DELAUNAY",
+  "author": "Cyriaque DELAUNAY",
   "description": "Projet 2A LPDW 2015",
   "main": "app.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "htmlmin": "0.0.6"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "http-proxy": "^1.13.2"
   }
 }

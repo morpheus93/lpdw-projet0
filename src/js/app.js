@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location', function($scope, $http,$rootScope,$location)
 {
 
-  $rootScope.apiIndex = "http://127.0.0.1/api/";
+  $rootScope.apiAddress = apiAddress;
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // called when a state change

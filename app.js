@@ -19,7 +19,7 @@ app.all('/api/*', function (req, res) {
     uri: apiIndex+reqPath,
     headers : req.headers
   },function(req,f,body){
-    res.json(JSON.parse(body));
+    res.json(body);
   })
 });
 

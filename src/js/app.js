@@ -1,4 +1,4 @@
-var apiAddress = "http://127.0.0.1";
+var apiAddress = "http://127.0.0.1:4000";
 
 var app = angular.module('projet2', [
 'ui.router',

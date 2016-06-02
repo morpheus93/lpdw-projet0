@@ -2,3 +2,90 @@ body{
   margin-top:50px;
   padding-top: 10px;
 }
+
+header{
+	nav{
+
+		div.menu{
+			height: calc(100% - 55px);
+			width: 295px;
+			position: fixed;
+			left: -295px;
+			bottom: 0;
+			background-color: #222;
+			-webkit-transition: width 2s, height 4s; /* Safari */
+    		transition: width 2s, height 4s;
+
+			ul{
+				li{
+					list-style: none;
+					a{
+						color: #fff;
+						text-decoration: none;
+					}
+				}
+			}
+
+			&.opened{
+    			left:0;
+    		}
+		}
+
+		.navbar-header{
+			float: none;
+			text-align: center;
+			line-height: 55px;
+
+			button.menu-btn{
+				background: none;
+	    		border: none;
+	    		float: left;
+	    		padding:0;
+	    		background: url(../img/menu.png) no-repeat;
+	    		background-size: 50px auto;
+	    		display: inline-block;
+	    		width: 50px;
+	    		height: 50px;
+
+	    		&.opened{
+	    			background: url(../img/menu-close.png) no-repeat;
+	    		}
+			}
+
+			a{
+	    		vertical-align: middle;
+				float: none;
+				line-height: normal;
+
+				&.navbar-brand{
+					text-transform: uppercase;
+				}
+			}
+
+			div.header-buttons{
+				float: right;
+				display: inline-block;
+
+				div{
+					display: inline-block;
+
+					a{
+						display: inline-block;
+						width: 48px;
+						height: 48px;
+
+						&.login{
+							background: url(../img/login.png) no-repeat;
+						}
+						&.account{
+							background: url(../img/account.png) no-repeat;
+						}
+						&.logout{
+							background: url(../img/logout.png) no-repeat;
+						}
+					}
+				}
+			}
+		}
+	}
+}

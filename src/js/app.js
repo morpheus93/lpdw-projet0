@@ -1,3 +1,5 @@
+var apiAddress = "http://127.0.0.1";
+
 var app = angular.module('projet2', [
 'ui.router',
 'ui.bootstrap'

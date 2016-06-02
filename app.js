@@ -5,7 +5,7 @@ var request = require('request');
 var bodyParser = require('body-parser');
 
 //edit the api location here
-var apiIndex = "http://127.0.0.1/lpdw-projet2-api/web/app_dev.php";
+var apiIndex = "http://colab.laouiti.me/app_dev.php";
 
 app.use(express.static('public'));
 app.use(bodyParser.json());

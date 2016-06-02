@@ -19,6 +19,7 @@
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^2.0.0",
     "gulp-image-optimization": "^0.1.3",

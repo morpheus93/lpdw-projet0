@@ -8,6 +8,7 @@ var del = require('del');
 var imageop = require('gulp-image-optimization');
 var ngmin = require('gulp-ngmin');
 var nodemon = require('gulp-nodemon');
+var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');  //prevent watch crash
 var gulpsync = require('gulp-sync')(gulp);
 
@@ -63,6 +64,15 @@ gulp.task('locales', function () {
     return gulp.src(['./src/locales/*.json'])
         .pipe(jsonminify())
         .pipe(gulp.dest('./public/locales/'));
+});
+
+gulp.task('autoprefixer', function () {
+  return gulp.src('./src/style/**/*.scss')
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('watch', function () {

@@ -1,4 +1,4 @@
-var apiAddress = "http://127.0.0.1";
+var apiAddress = "http://127.0.0.1:8080/api";
 
 var app = angular.module('projet2', [
 'ui.router',
@@ -21,6 +21,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/signup",
       templateUrl: "views/signup.html",
       controller : "signupCtrl"
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "views/login.html",
+      controller : "loginCtrl"
     })
     .state('organization', {
       url: "/organizations/:id",

@@ -14,8 +14,9 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
       url: $rootScope.apiAddress+'/accounts',
       data : $scope.signupInfos
     }).then(function successCallback(response) {
-      $scope.processing = false;
-      $scope.signupButtonLabel = "Créer un compte";
+      console.log(response);
+        $scope.processing = false;
+        $scope.signupButtonLabel = "Créer un compte";
         $scope.success = true;
       }, function errorCallback(response) {
         $scope.processing = false;

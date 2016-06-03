@@ -101,10 +101,17 @@ header{
 	}
 	form{
 		margin-bottom: 30px;
+
+		input{
+			&[type="checkbox"]{
+				margin-right: 10px;
+			}
+		}
 	}
 }
 
-.signup{
+.container.form{
+
 	p{
 		clear: both;
 		text-align: center;

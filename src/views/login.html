@@ -1,26 +1,27 @@
-<div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
-  <b>Votre compte à bien été enregistré !</b><br>
-  Un mail de confirmation vous a été envoyé à l'adresse mail renseignée avec la suite des instructions pour activer votre compte.
-</div>
-<div ng-show="loginError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
-  {{loginError}}
-</div>
-<form ng-hide="success" class="panel panel-default col-md-4 col-md-offset-4" ng-submit="sendlogin()">
-  <div class="panel-heading">
-    <h3 class="panel-title">Connexion</h3>
+<div class="container form login">
+  <h1 class="text-center">Connectez-vous</h1>
+  <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+    <b>Votre compte à bien été enregistré !</b><br>
+    Un mail de confirmation vous a été envoyé à l'adresse mail renseignée avec la suite des instructions pour activer votre compte.
   </div>
-  <div class="panel-body">
-    <div class="alert alert-danger" role="alert" ng-show="loginError">{{loginError}}</div>
-    <div class="form-group">
-      <label for="email">Entrez votre Username</label>
-      <input type="text" class="form-control" ng-model="loginInfos._username" id="username" placeholder="john.doe@gmail.com">
+  <div ng-show="loginError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+    {{loginError}}
+  </div>
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendlogin()">
+    <div class="panel-body">
+      <div class="alert alert-danger" role="alert" ng-show="loginError">{{loginError}}</div>
+      <div class="form-group">
+        <label for="email">Entrez votre username</label>
+        <input type="text" class="form-control" ng-model="loginInfos._username" id="username" placeholder="john.doe@gmail.com">
+      </div>
+      <div class="form-group">
+        <label for="password">Entrez votre mot de passe</label>
+        <input type="password" class="form-control" ng-model="loginInfos._password" id="password" placeholder="">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="password">Entrez votre mot de passe</label>
-      <input type="password" class="form-control" ng-model="loginInfos._password" id="password" placeholder="">
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{loginButtonLabel}}</button>
     </div>
-  </div>
-  <div class="panel-footer text-right">
-    <button type="submit" class="btn btn-primary" ng-disabled="processing">{{loginButtonLabel}}</button>
-  </div>
-</form>
+  </form>
+  <p>Vous n'avez pas encore de compte ? <a ui-sref="signup">Inscrivez-vous ici</a></p>
+</div>

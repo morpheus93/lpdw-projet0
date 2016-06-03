@@ -22,6 +22,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/signup.html",
       controller : "signupCtrl"
     })
+    .state('endingSignup', {
+      url: "/signup/ending",
+      templateUrl: "views/ending_signup.html",
+      controller : "signupCtrl"
+    })
     .state('login', {
       url: "/login",
       templateUrl: "views/login.html",

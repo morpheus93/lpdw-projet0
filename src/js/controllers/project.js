@@ -1,7 +1,13 @@
-app.controller('projectCtrl', function($scope,$state,$rootScope)
+app.controller('projectCtrl', function($scope,$state,$rootScope,$http)
 {
-  $scope.project = {
-    id : 1,
-    name : "Lorem ipsum"
-  }
+  $http({
+  method: 'GET',
+  url: $rootScope.apiAddress+'/projects'
+}).then(function successCallback(response) {
+  console.log(response);
+  $scope.project = response;
+  }, function errorCallback(response) {
+    console.log(response);
+    $state.go('main');
+  });
 });

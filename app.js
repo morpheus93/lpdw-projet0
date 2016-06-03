@@ -11,15 +11,23 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.all('/api/*', function (req, res) {
-  console.log(req);
   var reqPath = req.url.replace("/api","");
-  request({
-    // will be ignored
+  console.log("-- API Call --");
+  console.log(req.method+" on "+apiIndex+reqPath);
+
+  //replace the calling uri
+  //req.headers.host = apiIndex+reqPath;
+
+  var options = {
+    url : apiIndex+reqPath,
     method: req.method,
-    uri: apiIndex+reqPath,
-    headers : req.headers
-  },function(req,f,body){
-    res.json(body);
+    formData: req.formData
+  }
+
+  request(options,function(req,response,body){
+    console.log("-> Status "+response.statusCode);
+    console.log("--------------");
+    res.status(response.statusCode).send(body);
   })
 });
 

@@ -26,12 +26,12 @@
             <!-- logo -->
             <a class="navbar-brand" ui-sref="main">Colab</a>
             <div class="header-buttons">
-              <div class="not-logged">
-                <a ui-sref="signup" class="login" title="S'inscrire / Se conecter"></a>
+              <div class="not-logged" ng-show="!logged">
+                <a ui-sref="signup" class="login" title="S'inscrire / Se connecter"></a>
               </div>
               <div ng-show="logged">
                 <a ui-sref="account" class="account" title="Mon compte"></a>
-                <a ui-sref="logout" class="logout" title="Se déconnecter"></a>
+                <a ng-click="logout()" class="logout" title="Se déconnecter"></a>
               </div>
             </div>
           </div>

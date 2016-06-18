@@ -105,6 +105,14 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','localSto
     $rootScope.logged = true;
   }
 
+  $rootScope.logout = function(){
+    if(confirm("Voulez-vous vraiment vous déconnecter ?")){
+      $rootScope.access_token = "";
+      $rootScope.logged = false;
+      localStorageService.remove("access_token");
+      location.reload();
+    }
+  }
 
 
   $(".menu-btn").click(function(){

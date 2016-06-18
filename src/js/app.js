@@ -2,7 +2,8 @@ var apiAddress = "http://127.0.0.1:8080/api";
 
 var app = angular.module('projet2', [
 'ui.router',
-'ui.bootstrap'
+'ui.bootstrap',
+'LocalStorageModule'
     ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -77,11 +78,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
     });
 });
 
-app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location', function($scope, $http,$rootScope,$location)
+app.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('colab');
+});
+
+app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','localStorageService', function($scope, $http,$rootScope,$location,localStorageService)
 {
 
   $rootScope.apiAddress = apiAddress;
   $rootScope.access_token = "";
+  $rootScope.logged = false;
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // called when a state change
@@ -89,6 +96,18 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location', function
   $rootScope.$on('$stateChangeSuccess', function (event) {
     // called when a state has changed
   });
+
+  //
+  //  Login checker
+  //
+
+  var at = localStorageService.get("access_token");
+  if(at){
+    $rootScope.access_token = at;
+    $rootScope.logged = true;
+  }
+
+
 
   $(".menu-btn").click(function(){
     $(this).toggleClass("opened");

@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.all('/api/*', function (req, res) {
-  console.log(req.body);
   var reqPath = req.url.replace("/api","");
   console.log("-- API Call --");
   console.log(req.method+" on "+apiIndex+reqPath);
@@ -28,6 +27,13 @@ app.all('/api/*', function (req, res) {
     method: req.method,
     formData: req.body
   }
+
+
+    if(req.query.access_token){
+      console.log("Authentification with token : ");
+      console.log(req.query.access_token);
+      options.headers['Authorization'] = "Bearer "+req.query.access_token;
+    }
 
   request(options,function(req,response,body){
     console.log("-> Status "+response.statusCode);

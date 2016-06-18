@@ -8,9 +8,13 @@ var bodyParser = require('body-parser');
 var apiIndex = "http://colab.laouiti.me/app_dev.php";
 
 app.use(express.static('public'));
-app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
 app.all('/api/*', function (req, res) {
+  console.log(req.body);
   var reqPath = req.url.replace("/api","");
   console.log("-- API Call --");
   console.log(req.method+" on "+apiIndex+reqPath);
@@ -18,15 +22,18 @@ app.all('/api/*', function (req, res) {
   //replace the calling uri
   //req.headers.host = apiIndex+reqPath;
 
+
   var options = {
     url : apiIndex+reqPath,
     method: req.method,
-    formData: req.formData
+    formData: req.body
   }
 
   request(options,function(req,response,body){
     console.log("-> Status "+response.statusCode);
     console.log("--------------");
+    console.log("Form-data");
+    console.log(options.formData);
     res.status(response.statusCode).send(body);
   })
 });

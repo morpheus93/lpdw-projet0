@@ -18,6 +18,8 @@ app.controller('loginCtrl', function($scope,$state,$rootScope,$http)
         $scope.processing = false;
         $scope.loginButtonLabel = "Connexion";
         $scope.success = true;
+        //todo adding access token
+        /*$rootScope.access_token = response.*/
         $state.go("main");
       }, function errorCallback(response) {
         $scope.processing = false;

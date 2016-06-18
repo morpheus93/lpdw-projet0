@@ -81,6 +81,7 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location', function
 {
 
   $rootScope.apiAddress = apiAddress;
+  $rootScope.access_token = "";
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
     // called when a state change

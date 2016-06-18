@@ -9,7 +9,6 @@
   </div>
   <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendSignup()">
     <div class="panel-body">
-      <div class="alert alert-danger" role="alert" ng-show="signupError">{{signupError}}</div>
       <div class="form-group">
         <label for="lastname">Nom</label>
         <input type="text" class="form-control" ng-model="signupInfos.lastname" id="lastname" placeholder="Doe">

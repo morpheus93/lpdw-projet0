@@ -110,6 +110,21 @@ header{
 	}
 }
 
+.container.home{
+	.block{
+		height: 600px;
+	}
+
+	.vertical-center{
+		line-height: 600px;
+		 .thumbnail{
+		 	line-height: normal;
+		 	display: inline-block;
+		 	vertical-align: middle;
+		 }
+	}
+}
+
 .container.form{
 
 	p{

@@ -21,7 +21,7 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
       }, function errorCallback(response) {
         $scope.processing = false;
         $scope.signupButtonLabel = "Créer un compte";
-        $scope.signupError = "Une erreur s'est produite lors de l'inscription";
+        $scope.signupError = response.data.error.exception[0].message;
         console.log(response.data);
       });
   }

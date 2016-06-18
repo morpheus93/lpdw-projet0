@@ -8,7 +8,10 @@ var bodyParser = require('body-parser');
 var apiIndex = "http://colab.laouiti.me/app_dev.php";
 
 app.use(express.static('public'));
-app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
 
 app.all('/api/*', function (req, res) {
   var reqPath = req.url.replace("/api","");
@@ -18,15 +21,25 @@ app.all('/api/*', function (req, res) {
   //replace the calling uri
   //req.headers.host = apiIndex+reqPath;
 
+
   var options = {
     url : apiIndex+reqPath,
     method: req.method,
-    formData: req.formData
+    formData: req.body
   }
+
+
+    if(req.query.access_token){
+      console.log("Authentification with token : ");
+      console.log(req.query.access_token);
+      options.headers['Authorization'] = "Bearer "+req.query.access_token;
+    }
 
   request(options,function(req,response,body){
     console.log("-> Status "+response.statusCode);
     console.log("--------------");
+    console.log("Form-data");
+    console.log(options.formData);
     res.status(response.statusCode).send(body);
   })
 });

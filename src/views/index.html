@@ -1,4 +1,70 @@
-Index view
+<div class="container home">
+  	<div class="block jumbotron text-center">
+	  <h1>Bienvenue sur COLAB!</h1>
+	  <p>Subtitle</p>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus lectus, sollicitudin eu velit ut, scelerisque sollicitudin enim. Maecenas mollis scelerisque augue, vitae tristique dolor mattis vitae. Sed sit amet lacus neque. Fusce sed turpis ligula. Cras sed suscipit ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque sagittis mattis felis, vel consectetur nulla scelerisque non. Nullam a ullamcorper ligula. Sed nec mauris nulla.</p><br>
+	  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+	</div>
+  <div class="block container-fluid vertical-center">
+  	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="..." alt="...">
+	      <div class="caption">
+	        <h3>Thumbnail label</h3>
+	        <p>...</p>
+	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="..." alt="...">
+	      <div class="caption">
+	        <h3>Thumbnail label</h3>
+	        <p>...</p>
+	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <img src="..." alt="...">
+	      <div class="caption">
+	        <h3>Thumbnail label</h3>
+	        <p>...</p>
+	        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+  </div>
+  <div class="block col-md-12">
+  	<h2 class="text-center">Contact</h2>
+	<div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+	<b>Votre message a bien été envoyé !</b>.
+	</div>
+	<div ng-show="contactError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+	{{contactError}}
+	</div>
+	<form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendContact()">
+		<div class="panel-body">
+		  <div class="alert alert-danger" role="alert" ng-show="contactError">{{contactError}}</div>
+		  <div class="form-group">
+		    <label for="email">Entrez votre objet</label>
+		    <input type="text" class="form-control" ng-model="contact.objet" id="objet" placeholder="Votre Objet">
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Entrez votre mot de passe</label>
+		    <textarea class="form-control" ng-model="contact.message" placeholder="Votre message"></textarea>
+		  </div>
+		</div>
+		<div class="text-center">
+		  <button type="submit" class="btn btn-primary" ng-disabled="processing">{{contactButtonLabel}}</button>
+		</div>
+	</form>
+  </div>
+</div>
 <div class="container">
 	<ul>
 		<li><a ui-sref="projects">Projects list</a></li>

@@ -1,4 +1,4 @@
-app.controller('loginCtrl', function($scope,$state,$rootScope,$http)
+app.controller('loginCtrl', function($scope,$state,$rootScope,$http,localStorageService)
 {
   $scope.loginInfos = {};
   $scope.processing = false;
@@ -19,13 +19,12 @@ app.controller('loginCtrl', function($scope,$state,$rootScope,$http)
         $scope.loginButtonLabel = "Connexion";
         $scope.success = true;
         $rootScope.access_token = response.data.token;
-        $cookies.put("access_token", value, [options]);
+        localStorageService.set("access_token", response.data.token);
         $state.go("main");
       }, function errorCallback(response) {
         $scope.processing = false;
         $scope.loginButtonLabel = "Connexion";
         $scope.loginError = response.data;
-        console.log(response);
       });
   }
 });

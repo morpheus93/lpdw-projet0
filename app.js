@@ -32,6 +32,7 @@ app.all('/api/*', function (req, res) {
     if(req.query.access_token){
       console.log("Authentification with token : ");
       console.log(req.query.access_token);
+      options.headers = {};
       options.headers['Authorization'] = "Bearer "+req.query.access_token;
     }
 

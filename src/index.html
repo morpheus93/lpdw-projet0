@@ -29,9 +29,9 @@
               <div class="not-logged">
                 <a ui-sref="signup" class="login" title="S'inscrire / Se conecter"></a>
               </div>
-              <div class="logged" style="display: none;">
-                <a ui-sref="user" class="account" title="Mon compte"></a>
-                <a href="" class="logout" title="Se déconnecter"></a>
+              <div ng-show="logged">
+                <a ui-sref="account" class="account" title="Mon compte"></a>
+                <a ui-sref="logout" class="logout" title="Se déconnecter"></a>
               </div>
             </div>
           </div>

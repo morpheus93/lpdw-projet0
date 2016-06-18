@@ -1,5 +1,3 @@
-var apiAddress = "http://localhost:8080/api";
-
 var app = angular.module('projet2', [
 'ui.router',
 'ui.bootstrap',
@@ -85,7 +83,7 @@ app.config(function (localStorageServiceProvider) {
 
 app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','localStorageService', function($scope, $http,$rootScope,$location,localStorageService)
 {
-
+  var apiAddress = "http://"+$location.host()+":"+$location.port()+"/api";
   $rootScope.apiAddress = apiAddress;
   $rootScope.access_token = "";
   $rootScope.logged = false;

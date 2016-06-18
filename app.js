@@ -38,6 +38,7 @@ app.all('/api/*', function (req, res) {
       console.log(req.query.access_token);
       options.headers = {};
       options.headers['Authorization'] = "Bearer "+req.query.access_token;
+      delete req.query.access_token;
     }
 
   request(options,function(req,response,body){

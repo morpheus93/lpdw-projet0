@@ -4,9 +4,6 @@
     <b>Votre compte a bien été enregistré !</b><br>
     Un mail de confirmation vous a été envoyé à l'adresse mail renseignée avec la suite des instructions pour activer votre compte.
   </div>
-  <div ng-show="loginError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
-    {{loginError}}
-  </div>
   <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendlogin()">
     <div class="panel-body">
       <div class="alert alert-danger" role="alert" ng-show="loginError">{{loginError}}</div>

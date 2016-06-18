@@ -117,3 +117,19 @@ header{
 		text-align: center;
 	}
 }
+
+.container.search{
+	ul{
+		clear: both;
+	}	
+}
+
+
+
+@media screen and (max-width: 767px) {
+  	input{
+		&[type="file"]{
+			width: 100%;
+		}
+	}
+}

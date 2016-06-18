@@ -1,0 +1,25 @@
+<div class="container form contact">
+  <h1 class="text-center">Contact</h1>
+  <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+    <b>Votre message a bien été envoyé !</b>.
+  </div>
+  <div ng-show="contactError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+    {{contactError}}
+  </div>
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendContact()">
+    <div class="panel-body">
+      <div class="alert alert-danger" role="alert" ng-show="contactError">{{contactError}}</div>
+      <div class="form-group">
+        <label for="email">Entrez votre objet</label>
+        <input type="text" class="form-control" ng-model="contact.objet" id="objet" placeholder="Votre Objet">
+      </div>
+      <div class="form-group">
+        <label for="password">Entrez votre mot de passe</label>
+        <textarea class="form-control" ng-model="contact.message" placeholder="Votre message"></textarea>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{contactButtonLabel}}</button>
+    </div>
+  </form>
+</div>

@@ -49,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('contact', {
       url: "/contact",
-      templateUrl: "views/users.html",
+      templateUrl: "views/contact.html",
       controller : "contactCtrl"
     })
     .state('projects', {

@@ -37,15 +37,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/organizations.html",
       controller : "organizationCtrl"
     })
-    .state('user', {
-      url: "/users/:id",
+    .state('account', {
+      url: "/account/:id",
       templateUrl: "views/users.html",
-      controller : "userCtrl"
+      controller : "accountCtrl"
     })
     .state('editProfil', {
       url: "/profile/edit",
       templateUrl: "views/edit_profil.html",
-      controller : "userCtrl"
+      controller : "accountCtrl"
     })
     .state('contact', {
       url: "/contact",

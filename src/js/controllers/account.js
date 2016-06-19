@@ -10,7 +10,7 @@ app.controller('accountCtrl', function($scope,$state,$rootScope,$http)
     $scope.me = response.data;
     }, function errorCallback(response) {
       console.log(response);
-      $state.go('main');
+      $state.go('endingSignup');
     });
 
     $scope.profilInfos = {};
@@ -18,12 +18,12 @@ app.controller('accountCtrl', function($scope,$state,$rootScope,$http)
     $scope.success = false;
     $scope.profilButtonLabel = "Sauvegarder mes informations";
     $scope.profilError = false;
-    $scope.sendprofil = function(){
+    $scope.editProfil = function(){
       $scope.processing = true;
       $scope.profilError = false;
       $scope.profilButtonLabel = "Traitement...";
       $http({
-        method: 'POST',
+        method: 'PATCH',
         url: $rootScope.apiAddress+'/accounts',
         data : $scope.profilInfos
       }).then(function successCallback(response) {

@@ -1,16 +1,15 @@
 <div class="container form ending signup">
   <h1 class="text-center">Complétez votre compte</h1>
   <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
-    <b>Votre compte à bien été enregistré !</b><br>
-    Un mail de confirmation vous a été envoyé à l'adresse mail renseignée avec la suite des instructions pour activer votre compte.
+    <b>Votre compte a bien été configuré !</b><br>
+    <a ui-sref="editProfil">Acceder aux informations de mon compte</a>
   </div>
   <div ng-show="signupError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
     {{signupError}}
   </div>
 
-  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendSignup()">
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="endSignup()">
     <div class="panel-body">
-      <div class="alert alert-danger" role="alert" ng-show="signupError">{{signupError}}</div>
       <div class="form-group">
         <label for="user_phone">Statut</label>
         <select class="form-control" ng-model="signupInfos.status">
@@ -20,28 +19,16 @@
       </div>
       <div id="user" ng-if="signupInfos.status == 'user'">
         <div class="form-group">
-          <label for="user_phone">Téléphone</label>
-          <input type="text" class="form-control" ng-model="signupInfos.user_phone" id="user_phone" placeholder="0645873632">
+          <label for="user_phone">Prénom</label>
+          <input type="text" class="form-control" ng-model="signupInfos.name" id="user_name" placeholder="John">
         </div>
         <div class="form-group">
-          <label for="user_address">Adresse</label>
-          <input type="textarea" class="form-control" ng-model="signupInfos.user_address" id="user_address" placeholder="3 Rue Jean Jaurès">
+          <label for="user_phone">Nom</label>
+          <input type="text" class="form-control" ng-model="signupInfos.lastname" id="user_lastname" placeholder="Doe">
         </div>
         <div class="form-group">
-          <label for="user_zipcode">Code Postal</label>
-          <input type="text" class="form-control" ng-model="signupInfos.user_zipcode" id="user_zipcode" placeholder="75000">
-        </div>
-        <div class="form-group">
-          <label for="user_city">Ville</label>
-          <input type="text" class="form-control" ng-model="signupInfos.user_city" id="user_city" placeholder="Paris">
-        </div>
-        <div class="form-group">
-          <label for="user_country">Pays</label>
-          <input type="text" class="form-control" ng-model="signupInfos.user_country" id="user_country" placeholder="France">
-        </div>
-        <div class="form-group">
-          <label for="user_birthday">Date d'anniversaire</label>
-          <input type="date" class="form-control" ng-model="signupInfos.user_birthday" id="user_birthday">
+          <label for="user_birthday">Date de naissance</label>
+          <input type="date" class="form-control" ng-model="signupInfos.birth_date" id="user_birth_date">
         </div>
       </div>
 

@@ -17,7 +17,7 @@
             <li><a ui-sref="projects">Associations / Partenaires</a></li>
             <li ng-show="logged"><a ui-sref="announcements">Annonces</a></li>
             <li ng-show="logged"><a ui-sref="projects">Projets</a></li>
-            <li ng-show="logged"><a ui-sref="account">Mon compte</a></li>
+            <li ng-show="logged"><a ui-sref="editProfil">Mon compte</a></li>
             <li><a ui-sref="contact">Contactez-nous</a></li>
           </ul>
         </div>
@@ -33,7 +33,7 @@
                 <a ui-sref="signup" class="login" title="S'inscrire / Se connecter"></a>
               </div>
               <div ng-show="logged">
-                <a ui-sref="account" class="account" title="Mon compte"></a>
+                <a ui-sref="editProfil" class="account" title="Mon compte"></a>
                 <a ng-click="logout()" class="logout" title="Se déconnecter"></a>
               </div>
             </div>

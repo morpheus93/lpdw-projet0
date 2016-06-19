@@ -1,2 +1,27 @@
-New project page, use project ctrl
-HELLXJIKEF9HF
+<div class="container form new">
+  <h1 class="text-center">Ajoutez un projet</h1>
+  <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+    <b>Votre projet a bien été créé !</b>
+  </div>
+  <div ng-show="newProjectError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+    {{newProjectError}}
+  </div>
+
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendNewProject()">
+    <div class="panel-body">
+      <div>
+        <div class="form-group">
+          <label for="project_name">Nom du projet</label>
+          <input type="text" class="form-control" ng-model="newProjectInfos.name" id="project_name" placeholder="Nom du projet">
+        </div>
+        <div class="form-group">
+          <label for="project_desc">Description</label>
+          <textarea class="form-control" ng-model="newProjectInfos.description" id="project_desc" placeholder="Description"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{newProjectButtonLabel}}</button>
+    </div>
+  </form>
+</div>

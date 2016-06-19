@@ -13,17 +13,17 @@
       <div class="form-group">
         <label for="user_phone">Statut</label>
         <select class="form-control" ng-model="signupInfos.status">
-          <option value="organization" ng-model="selected">Association</option>
-          <option value="user" ng-model="selected">Membre</option>
+          <option value="organization">Association</option>
+          <option value="user">Membre</option>
         </select>
       </div>
       <div id="user" ng-if="signupInfos.status == 'user'">
         <div class="form-group">
-          <label for="user_phone">Prénom</label>
+          <label for="user_name">Prénom</label>
           <input type="text" class="form-control" ng-model="signupInfos.name" id="user_name" placeholder="John">
         </div>
         <div class="form-group">
-          <label for="user_phone">Nom</label>
+          <label for="user_lastname">Nom</label>
           <input type="text" class="form-control" ng-model="signupInfos.lastname" id="user_lastname" placeholder="Doe">
         </div>
         <div class="form-group">

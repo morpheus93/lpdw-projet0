@@ -165,6 +165,7 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
 
   var apiUri = $rootScope.apiAddress+'/me'+'?access_token='+$rootScope.access_token;
 
+if($rootScope.logged){
   $http({
     method: 'GET',
     url: apiUri
@@ -177,6 +178,7 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
         $state.go('endingSignup');
       }
     });
+}
 
 
   $(".menu-btn").click(function(){

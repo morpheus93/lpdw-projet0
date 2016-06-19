@@ -1,1 +1,79 @@
-New announcement page, use annnouncement ctrl
+<div class="container form new">
+  <h1 class="text-center">Ajoutez une annonce</h1>
+  <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+    <b>Votre annonce a bien été créée !</b>
+  </div>
+  <div ng-show="newAnnouncementError" class="alert alert-danger col-md-4 col-md-offset-4" role="alert">
+    {{newAnnouncementError}}
+  </div>
+
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendNewAnnouncement()">
+    <div class="panel-body">
+      <div>
+        <div class="form-group">
+          <label for="announcement_name">Titre de l'annonce</label>
+          <input type="text" class="form-control" ng-model="newAnnouncementInfos.name" id="announcement_name" placeholder="Titre de l'annonce" required>
+        </div>
+        <div class="form-group">
+          <label for="announcement_desc">Description</label>
+          <textarea class="form-control" ng-model="newAnnouncementInfos.description" id="announcement_desc" placeholder="Description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="announcement_dateBegin">Disponble du</label>
+          <input type="date" class="form-control" ng-model="newAnnouncementInfos.dateBegin" id="announcement_dateBegin" required>
+        </div>
+        <div class="form-group">
+          <label for="announcement_dateEnd">Au</label>
+          <input type="date" class="form-control" ng-model="newAnnouncementInfos.dateEnd" id="announcement_dateEnd">
+        </div>
+        <div class="form-group">
+          <label for="announcement_address">Adresse</label>
+          <textarea class="form-control" ng-model="newAnnouncementInfos.address" id="announcement_address" placeholder="2 rue Albert Einstein" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="announcement_city">Ville</label>
+          <input type="text" class="form-control" ng-model="newAnnouncementInfos.city" id="announcement_city" placeholder="Paris 75005" required>
+        </div>
+        <div class="form-group">
+          <label for="announcement_contactName">Nom du responsable</label>
+          <input type="text" class="form-control" ng-model="newAnnouncementInfos.contactName" id="announcement_contactName" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="announcement_contactEmail">Email du responsable</label>
+          <input type="email" class="form-control" ng-model="newAnnouncementInfos.contactEmail" id="announcement_contactEmail" placeholder="responsable@association.fr">
+        </div>
+        <div class="form-group">
+          <label for="announcement_contactPhone">Numéro du responsable</label>
+          <input type="text" class="form-control" ng-model="newAnnouncementInfos.contactPhone" id="announcement_contactPhone" placeholder="0123465798">
+        </div>
+        <div class="form-group">
+          <label for="announcement_type">Type d'annonce</label>
+          <select class="form-control" ng-model="newAnnouncementInfos.type" required>
+          	<option value="donation">Don</option>
+          	<option value="exchange">Echange</option>
+          	<option value="collect">Collecte</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="announcement_stock">Stock</label>
+          <input type="text" class="form-control" ng-model="newAnnouncementInfos.stock" id="announcement_stock" placeholder="300 matelas">
+        </div>
+        <div class="form-group">
+          <label for="announcement_minCollect">Quantité minimum</label>
+          <input type="number" class="form-control" ng-model="newAnnouncementInfos.minCollect" id="announcement_minCollect" placeholder="50">
+        </div>
+        <div class="form-group">
+          <label for="announcement_maxCollect">Quantité maximum</label>
+          <input type="number" class="form-control" ng-model="newAnnouncementInfos.maxCollect" id="announcement_maxCollect" placeholder="200">
+        </div>
+        <div class="form-group">
+          <input type="checkbox" class="" ng-model="newAnnouncementInfos.shipping" id="announcement_shipping">
+          <label for="announcement_shipping">Livraison</label>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{newAnnouncementButtonLabel}}</button>
+    </div>
+  </form>
+</div>

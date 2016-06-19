@@ -9,10 +9,11 @@ dep
 .bower-registry
 .bower-tmp
 
-## Tagifier ##
+## collab ##
 config.json
 exports
 temps
+public
 
 ### PHPSTORM ###
 .idea/*

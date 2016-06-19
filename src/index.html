@@ -14,11 +14,17 @@
         <div class="menu">
           <ul>
             <li><a ui-sref="main">Accueil</a></li>
-            <li><a ui-sref="projects">Associations / Partenaires</a></li>
+            <li><a ui-sref="organizations">Associations / Partenaires</a></li>
             <li ng-show="logged"><a ui-sref="announcements">Annonces</a></li>
             <li ng-show="logged"><a ui-sref="projects">Projets</a></li>
             <li ng-show="logged"><a ui-sref="editProfil">Mon compte</a></li>
             <li><a ui-sref="contact">Contactez-nous</a></li>
+          </ul>
+
+          <ul ng-if="me.account.roles[0] == 'ROLE_ADMIN'">
+            <p>ADMIN</p>
+            <li><a ui-sref="users">Utilisateurs</a></li>
+            <li><a ui-sref="projects">Nouvelles demandes</a></li>
           </ul>
         </div>
         <div class="container-fluid">

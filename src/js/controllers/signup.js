@@ -32,6 +32,10 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
       });
   }
 
+  if($state.params.token){
+    $scope.ending = true;
+  }
+
 
   //on signup ending send a post request to the account type api call
 
@@ -48,7 +52,7 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
     $scope.signupButtonLabel = "Traitement...";
     $http({
       method: 'POST',
-      url: $rootScope.apiAddress+apiUri+'?access_token='+$rootScope.access_token,
+      url: $rootScope.apiAddress+apiUri+'?access_token='+$state.params.token,
       data : $scope.signupInfos
     }).then(function successCallback(response) {
       console.log(response);

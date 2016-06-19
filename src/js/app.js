@@ -21,10 +21,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/signup.html",
       controller : "signupCtrl"
     })
-    .state('endingSignup', {
-      url: "/signup/ending",
-      templateUrl: "views/ending_signup.html",
-      controller : "signupCtrl"
+    .state('signup.endingSignup', {
+      url: "/ending/:token",
+      templateUrl: "views/ending_signup.html"
     })
     .state('resetPassword', {
       url: "/reset_password",
@@ -150,6 +149,7 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
 
   var at = localStorageService.get("access_token");
   if(at){
+    console.log("Login...");
     $rootScope.access_token = at;
     $rootScope.logged = true;
   }

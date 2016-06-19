@@ -25,7 +25,12 @@ app.controller('loginCtrl', function($scope,$state,$rootScope,$http,localStorage
       }, function errorCallback(response) {
         $scope.processing = false;
         $scope.loginButtonLabel = "Connexion";
-        $scope.loginError = response.data.error.exception[0].message;
+        if(response.data.error){
+          $scope.loginError = response.data.error.exception[0].message;
+        }
+        else{
+          $scope.loginError = response.data.message;
+        }
       });
   }
 });

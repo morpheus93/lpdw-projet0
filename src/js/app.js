@@ -78,10 +78,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/:id",
       templateUrl: "views/announcements/announcement.html",
     })
-    /*.state('announcement', {
-      url: "/announcement",
-      templateUrl: "views/announcements/announcement.html",
-    })*/
+    .state('announcements.new', {
+      url: "/new",
+      templateUrl: "views/announcements/new.html",
+    })
     .state('search', {
       url: "/search/:query",
       templateUrl: "views/search.html",

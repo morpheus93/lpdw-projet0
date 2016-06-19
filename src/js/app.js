@@ -56,14 +56,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/projects/list.html",
       controller : "projectCtrl"
     })
-    /*.state('projects.item', {
+    .state('projects.item', {
       url: "/:id",
       templateUrl: "views/projects/project.html",
-    })*/
-    .state('project', {
+    })
+    /*.state('project', {
       url: "/project",
       templateUrl: "views/projects/project.html",
-    })
+    })*/
     .state('announcements', {
       url: "/announcements",
       templateUrl: "views/announcements/list.html",

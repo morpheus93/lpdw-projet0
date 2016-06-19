@@ -113,6 +113,14 @@ header{
 .container.home{
 	.block{
 		height: 600px;
+
+		.col-md-4{
+			text-align:center;
+		}
+
+		.thumbnail{
+			min-height: 200px;
+		}
 	}
 
 	.vertical-center{
@@ -149,11 +157,34 @@ header{
 }
 
 
+@media screen and (max-width: 1023px) {
+	.container.home{
+		.block{
+			height: auto;
+		}
+		.vertical-center{
+			line-height: normal;
+
+			.thumbnail{
+				display: block;
+			}
+		}
+	}
+}
 
 @media screen and (max-width: 767px) {
   	input{
 		&[type="file"]{
 			width: 100%;
+		}
+	}
+
+	.container.home{
+		.block{
+			height: auto;
+		}
+		.vertical-center{
+			line-height: normal;
 		}
 	}
 }

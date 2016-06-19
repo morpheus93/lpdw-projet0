@@ -11,7 +11,7 @@ app.controller('contactCtrl', function($scope,$state,$rootScope,$http)
     $scope.contactButtonLabel = "Traitement...";
     $http({
       method: 'POST',
-      url: $rootScope.apiAddress+'/contact_check',
+      url: $rootScope.apiAddress+'/contact',
       data : $scope.contact
     }).then(function successCallback(response) {
       console.log(response);

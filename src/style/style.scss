@@ -69,6 +69,13 @@ header{
 				float: right;
 				display: inline-block;
 
+				a.search{
+					display: inline-block;
+					width: 48px;
+					height: 48px;
+					background: url(../img/search.png) no-repeat;
+				}
+
 				div{
 					display: inline-block;
 

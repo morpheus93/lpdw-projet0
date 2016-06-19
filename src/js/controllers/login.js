@@ -21,6 +21,7 @@ app.controller('loginCtrl', function($scope,$state,$rootScope,$http,localStorage
         $rootScope.access_token = response.data.token;
         localStorageService.set("access_token", response.data.token);
         $state.go("main");
+        location.reload();
       }, function errorCallback(response) {
         $scope.processing = false;
         $scope.loginButtonLabel = "Connexion";

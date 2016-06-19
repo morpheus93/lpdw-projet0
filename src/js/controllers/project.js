@@ -3,7 +3,7 @@ app.controller('projectCtrl', function($scope,$state,$rootScope,$http)
 
   var apiUri = $rootScope.apiAddress+'/projects'+'?access_token='+$rootScope.access_token;
   if($state.params.id){
-    apiUri = $rootScope.apiAddress+'/projects/'+$state.params.id+'?access_token='+$rootScope.access_token;;
+    apiUri = $rootScope.apiAddress+'/projects/'+$state.params.id+'?access_token='+$rootScope.access_token;
   }
 
   $http({
@@ -16,6 +16,20 @@ app.controller('projectCtrl', function($scope,$state,$rootScope,$http)
       console.log(response);
       $state.go('main');
     });
+
+    //retreive the promise informations if promiseId is given
+    if($state.params.promiseId && $state.params.id){
+      $http({
+        method: 'GET',
+        url: apiUri = $rootScope.apiAddress+'/projects/'+$state.params.id+'/promises/'+$state.params.promiseId
+      }).then(function successCallback(response) {
+        console.log("promise :");
+        console.log(response);
+        $scope.promise = response.data;
+        }, function errorCallback(response) {
+          console.log(response);
+        });
+    }
 
     $scope.newProjectInfos = {};
     $scope.processing = false;

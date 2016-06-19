@@ -65,6 +65,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/{id:int}",
       templateUrl: "views/projects/project.html",
     })
+    .state('projects.item.promise', {
+      url: "/{promiseId:int}",
+      templateUrl: "views/projects/promise.html",
+    })
     .state('projects.new', {
       url: "/new",
       templateUrl: "views/projects/new.html",
@@ -92,6 +96,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller : "searchCtrl"
     });
 });
+
+app.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                var reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = loadEvent.target.result;
+                    });
+                }
+                reader.readAsDataURL(changeEvent.target.files[0]);
+            });
+        }
+    }
+}]);
 
 app.config(function (localStorageServiceProvider) {
   localStorageServiceProvider

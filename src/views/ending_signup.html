@@ -35,35 +35,32 @@
       <div id="organization" ng-if="signupInfos.status == 'organization'">
         <div class="form-group">
           <label for="org_name">Nom de l'association</label>
-          <input type="text" class="form-control" ng-model="signupInfos.org_name" id="org_name" placeholder="Doe Org">
+          <input type="text" class="form-control" ng-model="signupInfos.name" id="org_name" placeholder="Doe Org">
         </div>
         <div class="form-group">
-          <label for="owner_lastname">Nom du fondateur</label>
-          <input type="text" class="form-control" ng-model="signupInfos.owner_lastname" id="owner_lastname" placeholder="John">
+          <label for="org_code">Code de l'association</label>
+          <input type="text" class="form-control" ng-model="signupInfos.code" id="org_code">
         </div>
         <div class="form-group">
-          <label for="owner_firstname">Prénom du fondateur</label>
-          <input type="text" class="form-control" ng-model="signupInfos.owner_firstname" id="owner_firstname" placeholder="John">
+          <label for="leader_name">Nom du fondateur</label>
+          <input type="text" class="form-control" ng-model="signupInfos.leader_name" id="leader_name" placeholder="John">
         </div>
         <div class="form-group">
-          <label for="org_address">Adresse</label>
-          <input type="textarea" class="form-control" ng-model="signupInfos.org_address" id="org_address" placeholder="3 Rue Jean Jaurès">
+          <label for="leader_phone">Téléphone du fondateur</label>
+          <input type="text" class="form-control" ng-model="signupInfos.leader_phone" id="leader_phone" placeholder="0123465798">
         </div>
         <div class="form-group">
-          <label for="org_zipcode">Code Postal</label>
-          <input type="text" class="form-control" ng-model="signupInfos.org_zipcode" id="org_zipcode" placeholder="75000">
+          <label for="leader_email">Email du fondateur</label>
+          <input type="email" class="form-control" ng-model="signupInfos.leader_email" id="leader_email" placeholder="john.doe@hotmail.fr">
         </div>
         <div class="form-group">
-          <label for="org_city">Ville</label>
-          <input type="text" class="form-control" ng-model="signupInfos.org_city" id="org_city" placeholder="Paris">
+          <label for="description">Description</label>
+          <textarea class="form-control" ng-model="signupInfos.description" id="description"></textarea>
         </div>
+        
         <div class="form-group">
-          <label for="org_country">Pays</label>
-          <input type="text" class="form-control" ng-model="signupInfos.org_country" id="org_country" placeholder="France">
-        </div>
-        <div class="form-group">
-          <label for="org_files">Importer les documents officiels de l'association</label>
-          <input type="file" id="asso_files" fileread="signupInfos.org_files" placeholder="Document officiel">
+          <label for="files">Importer les documents officiels de l'association</label>
+          <input type="file" id="files" fileread="signupInfos.files">
         </div>
       </div>
     </div>

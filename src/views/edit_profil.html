@@ -13,15 +13,15 @@
       <p>John Doe</p>
       <div class="form-group">
         <label for="email">Adresse email</label>
-        <input type="email" class="form-control" ng-model="signupInfos.email" id="email" value="john.doe@gmail.com">
+        <input type="email" class="form-control" ng-model="profilInfos.email" id="email" value="john.doe@gmail.com">
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" class="form-control" ng-model="signupInfos.password" id="password">
+        <input type="password" class="form-control" ng-model="profilInfos.password" id="password">
       </div>
       <div class="form-group">
         <label for="password_confirmation">Confirmez le mot de passe</label>
-        <input type="password" class="form-control" ng-model="signupInfos.password_confirmation" id="password_confirmation">
+        <input type="password" class="form-control" ng-model="profilInfos.password_confirmation" id="password_confirmation">
       </div>
       <div class="form-group">
         <label for="photo">Importer une photo</label>
@@ -29,8 +29,7 @@
       </div>
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary" ng-disabled="processing">Modifier</button>
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{profilButtonLabel}}</button>
     </div>
   </form>
 </div>
-

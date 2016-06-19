@@ -1,6 +1,6 @@
 app.controller('accountCtrl', function($scope,$state,$rootScope,$http)
 {
-  var apiUri = $rootScope.apiAddress+'/account/me'+'?access_token='+$rootScope.access_token;
+  var apiUri = $rootScope.apiAddress+'/me'+'?access_token='+$rootScope.access_token;
 
   $http({
     method: 'GET',

@@ -137,4 +137,9 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','localSto
     $(".menu").toggleClass("opened");
   });
 
+   $(".menu li a").click(function(){
+    $(".menu-btn").removeClass("opened");
+    $(".menu").removeClass("opened");
+  });
+
 }]);

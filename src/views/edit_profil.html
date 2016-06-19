@@ -10,10 +10,10 @@
   <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendSignup()">
     <div class="panel-body">
       <div class="alert alert-danger" role="alert" ng-show="signupError">{{signupError}}</div>
-      <p>John Doe</p>
+      <p>{{me.name}} {{me.lastname}}</p>
       <div class="form-group">
         <label for="email">Adresse email</label>
-        <input type="email" class="form-control" ng-model="profilInfos.email" id="email" value="john.doe@gmail.com">
+        <input type="email" class="form-control" ng-model="profilInfos.email" id="email" value="john.doe@gmail.com" placeholder="{{me.account.email}}">
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>

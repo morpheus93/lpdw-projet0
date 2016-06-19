@@ -19,10 +19,16 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
         $scope.signupButtonLabel = "Créer un compte";
         $scope.success = true;
       }, function errorCallback(response) {
+        $scope.success = false;
         $scope.processing = false;
         $scope.signupButtonLabel = "Créer un compte";
-        $scope.signupError = response.data.error.exception[0].message;
-        console.log(response.data);
+        if(response.data.error){
+          $scope.signupError = response.data.error.exception[0].message;
+        }
+        else{
+            $scope.signupError = response.data;
+        }
+        console.log(response);
       });
   }
 });

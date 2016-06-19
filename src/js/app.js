@@ -37,12 +37,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller : "loginCtrl"
     })
     .state('organization', {
-      url: "/organizations/:id",
+      url: "/organizations/{id:int}",
       templateUrl: "views/organizations.html",
       controller : "organizationCtrl"
     })
     .state('account', {
-      url: "/account/:id",
+      url: "/account/{id:int}",
       templateUrl: "views/users.html",
       controller : "accountCtrl"
     })
@@ -62,7 +62,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller : "projectCtrl"
     })
     .state('projects.item', {
-      url: "/:id",
+      url: "/{id:int}",
       templateUrl: "views/projects/project.html",
     })
     .state('projects.new', {
@@ -79,7 +79,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller : "announcementCtrl"
     })
     .state('announcements.item', {
-      url: "/:id",
+      url: "/{id:int}",
       templateUrl: "views/announcements/announcement.html",
     })
     .state('announcements.new', {

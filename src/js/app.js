@@ -173,7 +173,9 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
     $rootScope.me = response.data;
     }, function errorCallback(response) {
       console.log(response);
-      $state.go('endingSignup');
+      if($rootScope.access_token){
+        $state.go('endingSignup');
+      }
     });
 
 

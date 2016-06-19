@@ -1,4 +1,4 @@
-app.controller('contactCtrl', function($scope,$state,$rootScope)
+app.controller('contactCtrl', function($scope,$state,$rootScope,$http)
 {
   $scope.contact = {};
   $scope.processing = false;

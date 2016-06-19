@@ -14,7 +14,7 @@ app.controller('announcementCtrl', function($scope,$state,$rootScope,$http)
     $scope.announcements = response.data;
     }, function errorCallback(response) {
       console.log(response);
-      $state.go('main');
+      $state.go('login');
     });
 
     $scope.newAnnouncementInfos = {};

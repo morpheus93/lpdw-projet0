@@ -14,6 +14,6 @@ app.controller('organizationCtrl', function($scope,$state,$rootScope,$http)
     $scope.projects = response.data;
     }, function errorCallback(response) {
       console.log(response);
-      $state.go('main');
+      $state.go('login');
     });
 });

@@ -20,9 +20,9 @@ app.controller('announcementCtrl', function($scope,$state,$rootScope,$http)
     $scope.newAnnouncementInfos = {};
     $scope.processing = false;
     $scope.success = false;
-    $scope.newAnnouncementButtonLabel = "Créer un compte";
+    $scope.newAnnouncementButtonLabel = "Créer mon annonce";
     $scope.newAnnouncementError = false;
-    $scope.sendnewAnnouncement = function(){
+    $scope.sendNewAnnouncement = function(){
       $scope.processing = true;
       $scope.newAnnouncementError = false;
       $scope.newAnnouncementButtonLabel = "Traitement...";
@@ -33,12 +33,12 @@ app.controller('announcementCtrl', function($scope,$state,$rootScope,$http)
       }).then(function successCallback(response) {
         console.log(response);
           $scope.processing = false;
-          $scope.newAnnouncementButtonLabel = "Créer un compte";
+          $scope.newAnnouncementButtonLabel = "Créer mon annonce";
           $scope.success = true;
         }, function errorCallback(response) {
           $scope.success = false;
           $scope.processing = false;
-          $scope.newAnnouncementButtonLabel = "Créer un compte";
+          $scope.newAnnouncementButtonLabel = "Créer mon annonce";
           if(response.data.error){
             $scope.newAnnouncementError = response.data.error.exception[0].message;
           }

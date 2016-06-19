@@ -56,8 +56,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/projects/list.html",
       controller : "projectCtrl"
     })
-    .state('projects.item', {
+    /*.state('projects.item', {
       url: "/:id",
+      templateUrl: "views/projects/project.html",
+    })*/
+    .state('project', {
+      url: "/project",
       templateUrl: "views/projects/project.html",
     })
     .state('announcements', {
@@ -69,6 +73,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/:id",
       templateUrl: "views/announcements/announcement.html",
     })
+    /*.state('announcement', {
+      url: "/announcement",
+      templateUrl: "views/announcements/announcement.html",
+    })*/
     .state('search', {
       url: "/search/:query",
       templateUrl: "views/search.html",

@@ -40,11 +40,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/organizations/list.html",
       controller : "organizationCtrl"
     })
-    .state('organizations.item', {
-      url: "/organizations/{id:int}",
-      templateUrl: "views/organizations/organization.html",
-      controller : "organizationCtrl"
-    })
     .state('users', {
       url: "/users",
       templateUrl: "views/users.html",
@@ -163,9 +158,9 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
     }
   }
 
-  var apiUri = $rootScope.apiAddress+'/me'+'?access_token='+$rootScope.access_token;
 
 if($rootScope.logged){
+  var apiUri = $rootScope.apiAddress+'/me'+'?access_token='+$rootScope.access_token;
   $http({
     method: 'GET',
     url: apiUri

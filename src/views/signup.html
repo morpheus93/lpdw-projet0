@@ -11,14 +11,6 @@
   <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendSignup()">
     <div class="panel-body">
       <div class="form-group">
-        <label for="lastname">Nom</label>
-        <input type="text" class="form-control" ng-model="signupInfos.lastname" id="lastname" placeholder="Doe">
-      </div>
-      <div class="form-group">
-        <label for="name">Prénom</label>
-        <input type="text" class="form-control" ng-model="signupInfos.name" id="name" placeholder="John">
-      </div>
-      <div class="form-group">
         <label for="email">Adresse email</label>
         <input type="email" class="form-control" ng-model="signupInfos.email" id="email" placeholder="john.doe@gmail.com">
       </div>
@@ -30,10 +22,10 @@
         <label for="password_confirmation">Confirmez le mot de passe</label>
         <input type="password" class="form-control" ng-model="signupInfos.password_confirmation" id="password_confirmation" placeholder="">
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="photo">Importer une photo</label>
         <input type="file" id="photo" placeholder="">
-      </div>
+      </div> -->
       <div class="form-group">
         <input type="checkbox" class="" id="conditions" placeholder=""><label for="conditions"> J'accete les conditions</label>
       </div>

@@ -10,8 +10,12 @@
     <div class="panel-body">
       <div class="alert alert-danger" role="alert" ng-show="contactError">{{contactError}}</div>
       <div class="form-group">
-        <label for="email">Entrez votre objet</label>
-        <input type="text" class="form-control" ng-model="contact.objet" id="objet" placeholder="Votre Objet">
+        <label>Votre adresse mail</label>
+        <input type="email" class="form-control" ng-model="contact.from" id="objet" placeholder="john.doe@gmail.com">
+      </div>
+      <div class="form-group">
+        <label>Entrez votre objet</label>
+        <input type="text" class="form-control" ng-model="contact.subject" id="objet" placeholder="Votre Objet">
       </div>
       <div class="form-group">
         <label for="password">Entrez votre mot de passe</label>

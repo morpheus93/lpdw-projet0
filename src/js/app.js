@@ -49,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('editProfil', {
       url: "/profile/edit",
       templateUrl: "views/edit_profil.html",
-      controller : "editProfilCtrl"
+      controller : "accountCtrl"
     })
     .state('contact', {
       url: "/contact",

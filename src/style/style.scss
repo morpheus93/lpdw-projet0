@@ -60,8 +60,9 @@ header{
 				float: none;
 				line-height: normal;
 
-				&.navbar-brand{
-					text-transform: uppercase;
+				&.navbar-brand img{
+					height: 60px;
+					display: inline-block;
 				}
 			}
 

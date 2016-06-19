@@ -65,6 +65,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/:id",
       templateUrl: "views/projects/project.html",
     })
+    .state('projects.new', {
+      url: "/new",
+      templateUrl: "views/projects/new.html",
+    })
     /*.state('project', {
       url: "/project",
       templateUrl: "views/projects/project.html",

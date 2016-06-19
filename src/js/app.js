@@ -74,9 +74,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/{promiseId:int}",
       templateUrl: "views/projects/promise.html",
     })
-    .state('projects.new', {
-      url: "/new",
+    .state('newProject', {
+      url: "/new_project",
       templateUrl: "views/projects/new.html",
+      controller : "projectCtrl"
     })
     /*.state('project', {
       url: "/project",
@@ -91,9 +92,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/{id:int}",
       templateUrl: "views/announcements/announcement.html",
     })
-    .state('announcements.new', {
-      url: "/new",
+    .state('newAnnouncement', {
+      url: "/new_announcement",
       templateUrl: "views/announcements/new.html",
+      controller : "announcementCtrl"
     })
     .state('search', {
       url: "/search/:query",
@@ -129,9 +131,9 @@ app.config(function (localStorageServiceProvider) {
 app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state','localStorageService', function($scope, $http,$rootScope,$location,$state,localStorageService)
 {
   var apiAddress = "http://"+$location.host()+":"+$location.port()+"/api";
-  
+
   $rootScope.apiAddress = apiAddress;
-  
+
   $rootScope.access_token = "";
   $rootScope.logged = false;
 
@@ -162,7 +164,7 @@ app.controller('mainCtrl', ['$scope', '$http','$rootScope','$location','$state',
   }
 
   var apiUri = $rootScope.apiAddress+'/me'+'?access_token='+$rootScope.access_token;
-  
+
   $http({
     method: 'GET',
     url: apiUri

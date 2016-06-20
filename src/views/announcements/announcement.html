@@ -1,22 +1,26 @@
 <div class="container announcement">
 	<div class="row clearfix">
 		<div class="col-md-offset-2 col-md-4">
-		  <h1 class="text-left">10kg de riz</h1>
+		  <h1 class="text-left">{{announcement.name}}</h1>
 		</div>
 	</div>
 	<div class="single_announcement row">
 		<div class="col-md-8 col-md-offset-2 list-group">
 		    <div class="list-group-item row">
-		    	<div class="col-md-6 pull-left">
-			      	<h2>Nom de l'assoc</h2>
-			        <p class="list-group-item-text">Statut : Disponible</p>
-			        <p class="list-group-item-text">Type : Don</p>
-			        <p class="list-group-item-text">Quantité initiale : 10kg</p>
-			        <p class="list-group-item-text">Quantité restante : 10kg</p>
-			        <p class="list-group-item-text">Lieu : Stocké chez Association A à Paris 75002</p>
-			        <p class="list-group-item-text">Peut-être livré ou récupéré</p>
+		    	<div class="col-md-12">
+			      	<!-- <h2>{{announcement.contactName}}</h2> -->
+			        <p class="list-group-item-text">Responsable : {{announcement.contactName}}</p>
+			        <p class="list-group-item-text">Email : {{announcement.contactEmail}}</p>
+			        <p class="list-group-item-text">Téléphone : {{announcement.contactPhone}}</p>
+			        <!-- <p class="list-group-item-text">Statut : Disponible</p> -->
+			        <p class="list-group-item-text">Type : {{announcement.type}}</p>
+			        <p class="list-group-item-text">Quantité initiale : {{announcement.stock}}</p>
+			        <p class="list-group-item-text">Quantité minimale : {{announcement.minCollect}}</p>
+			        <p class="list-group-item-text">Quantité maximale : {{announcement.maxCollect}}</p>
+			        <p class="list-group-item-text">Lieu : {{announcement.address}} {{announcement.city}}</p>
+			        <p class="list-group-item-text" ng-if="{{announcement.shipping}}">Peut-être livré ou récupéré</p>
 		        </div>
-		        <img class="col-md-5 pull-right" src="">
+		        <!-- <img class="col-md-5 pull-right" src=""> -->
 		    </div>
 			<a class="btn btn-default pull-right" href="#" role="button">Recevoir le don</a>
 	  </div>

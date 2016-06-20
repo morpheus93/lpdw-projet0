@@ -1,7 +1,7 @@
 <div class="container announcement">
 	<div class="row clearfix">
 		<div class="col-md-offset-2 col-md-4">
-		  <h1 class="text-left">Idée Projet</h1>
+		  <h1 class="text-left">{{project.name}}</h1>
 			<div ui-view></div>
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 			        <img class="col-md-7 pull-right" src="">
 		        </div>
 		        <p class="list-group-item-text">
-		        Description : <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tellus lectus, sollicitudin eu velit ut, scelerisque sollicitudin enim. Maecenas mollis scelerisque augue, vitae tristique dolor mattis vitae. Sed sit amet lacus neque. Fusce sed turpis ligula. Cras sed suscipit ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque sagittis mattis felis, vel consectetur nulla scelerisque non. Nullam a ullamcorper ligula. Sed nec mauris nulla.
+		        Description : <br>{{project.description}}
 		        </p>
 		        <p class="list-group-item-text">Montant récolté : 500€</p>
 		        <p class="list-group-item-text">Date d'ouverture : 02/05/2016</p>
@@ -25,7 +25,7 @@
 		        	<li>John Doe</li>
 		        </ul>
 		    </div>
-			<a class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal" href="#" role="button">Faire une promesse de don</a>
+			<a class="btn btn-default pull-right" ui-sref="projects.item.promise" role="button">Faire une promesse de don</a>
 	  </div>
 	</div>
 </div>

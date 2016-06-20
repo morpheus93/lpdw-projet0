@@ -1,1 +1,22 @@
-Retreive promise info by id
+<div class="container form login">
+  <h1 class="text-center">Faites une promesse de don</h1>
+  <div ng-show="success" class="alert alert-success col-md-4 col-md-offset-4" role="alert">
+    <b>Votre don a bien été enregistré !</b>
+  </div>
+  <form ng-hide="success" class="col-md-4 col-md-offset-4" ng-submit="sendNewPromise()">
+    <div class="panel-body">
+      <div class="alert alert-danger" role="alert" ng-show="newPromiseError">{{newPromiseError}}</div>
+      <div class="form-group">
+        <label for="amount">Montant du don</label>
+        <input type="number" class="form-control" ng-model="newPromiseInfos.amount" id="amount" required>
+      </div>
+      <div class="form-group">
+        <input type="checkbox" class="form-control" ng-model="newPromiseInfos.userHidden" id="userHidden" placeholder="">
+        <label for="userHidden">Faire un don anonyme</label>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" ng-disabled="processing">{{newPromiseButtonLabel}}</button>
+    </div>
+  </form>
+</div>

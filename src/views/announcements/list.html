@@ -4,7 +4,7 @@
   <h1 class="text-center">Annonces</h1>
   <div class="col-md-8 col-md-offset-2">
     <div class="list-group" ng-repeat="announcement in announcements">
-      <a href="#" class="list-group-item active">
+      <a href="#/announcements/{{announcement.id}}" class="list-group-item active">
         <h4 class="list-group-item-heading">{{announcement.name}}</h4>
         <p class="list-group-item-text">{{announcement.description}}</p>
       </a>

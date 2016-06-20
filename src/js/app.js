@@ -170,7 +170,7 @@ if($rootScope.logged){
     }, function errorCallback(response) {
       console.log(response);
       if($rootScope.access_token){
-        $state.go('endingSignup');
+        $state.go('signup.endingSignup');
       }
     });
 }

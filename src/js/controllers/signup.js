@@ -52,7 +52,7 @@ app.controller('signupCtrl', function($scope,$state,$rootScope,$http)
     $scope.signupButtonLabel = "Traitement...";
     $http({
       method: 'POST',
-      url: $rootScope.apiAddress+apiUri+'?access_token='+$state.params.token,
+      url: $rootScope.apiAddress+apiUri+'?access_token='+$rootScope.access_token,
       data : $scope.signupInfos
     }).then(function successCallback(response) {
       console.log(response);

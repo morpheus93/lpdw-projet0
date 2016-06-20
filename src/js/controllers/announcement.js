@@ -3,7 +3,7 @@ app.controller('announcementCtrl', function($scope,$state,$rootScope,$http)
 
  var apiUri = $rootScope.apiAddress+'/announcements'+'?access_token='+$rootScope.access_token;
   if($state.params.id){
-    apiUri = $rootScope.apiAddress+'/announcements/'+$state.params.id+'?access_token='+$rootScope.access_token;;
+    apiUri = $rootScope.apiAddress+'/announcements/'+$state.params.id+'?access_token='+$rootScope.access_token;
   }
 
   $http({
@@ -28,7 +28,7 @@ app.controller('announcementCtrl', function($scope,$state,$rootScope,$http)
       $scope.newAnnouncementButtonLabel = "Traitement...";
       $http({
         method: 'POST',
-        url: $rootScope.apiAddress+'/announcements',
+        url: $rootScope.apiAddress+'/announcements'+'?access_token='+$rootScope.access_token,
         data : $scope.newAnnouncementInfos
       }).then(function successCallback(response) {
         console.log(response);

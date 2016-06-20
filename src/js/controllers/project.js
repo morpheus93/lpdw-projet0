@@ -1,8 +1,9 @@
 app.controller('projectCtrl', function($scope,$state,$rootScope,$http)
 {
-
+  $scope.single = false;
   var apiUri = $rootScope.apiAddress+'/projects'+'?access_token='+$rootScope.access_token;
   if($state.params.id){
+    $scope.single = true;
     apiUri = $rootScope.apiAddress+'/projects/'+$state.params.id+'?access_token='+$rootScope.access_token;
   }
 
@@ -42,7 +43,7 @@ app.controller('projectCtrl', function($scope,$state,$rootScope,$http)
       $scope.newProjectButtonLabel = "Traitement...";
       $http({
         method: 'POST',
-        url: $rootScope.apiAddress+'/projects',
+        url: $rootScope.apiAddress+'/projects?access_token='+$rootScope.access_token,
         data : $scope.newProjectInfos
       }).then(function successCallback(response) {
         console.log(response);
